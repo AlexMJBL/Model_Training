@@ -16,6 +16,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def read_root():
+    return {"status": "ok", "message": "ML API is running!"}
+
 # --- 1. CHARGEMENT DU MODÈLE ET DES CLASSES ---
 print("Chargement du modèle CIFAR-10...")
 model = tf.keras.models.load_model('cifar10_model.keras')

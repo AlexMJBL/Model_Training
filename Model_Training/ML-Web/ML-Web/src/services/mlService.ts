@@ -2,7 +2,8 @@ import type { RequestDto } from '../models/Dtos/requestDto';
 import type { ResponseDto } from '../models/Dtos/responseDto';
 import type { ErrorDto } from '../models/Dtos/errorDto';
 
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const rawBaseUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+const BASE_URL = rawBaseUrl.endsWith('/') ? rawBaseUrl.slice(0, -1) : rawBaseUrl;
 
 const API_URL = `${BASE_URL}/predict`;
 const API_URL_V1 = `${BASE_URL}/predictv1`;
