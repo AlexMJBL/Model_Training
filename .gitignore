@@ -1,0 +1,13 @@
+venv/
+Model_Training/venv/
+__pycache__/
+*.pyc
+
+# OS garbage
+.DS_Store
+__MACOSX/
+._*
+
+# Node
+node_modules/
+dist/
