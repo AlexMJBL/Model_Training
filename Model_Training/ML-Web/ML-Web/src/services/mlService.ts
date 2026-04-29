@@ -2,9 +2,11 @@ import type { RequestDto } from '../models/Dtos/requestDto';
 import type { ResponseDto } from '../models/Dtos/responseDto';
 import type { ErrorDto } from '../models/Dtos/errorDto';
 
-const API_URL = 'http://localhost:8000/predict';
-const API_URL_V1 = 'http://localhost:8000/predictv1';
-const API_URL_OVERFIT = 'http://localhost:8000/predictOverfit';
+const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
+const API_URL = `${BASE_URL}/predict`;
+const API_URL_V1 = `${BASE_URL}/predictv1`;
+const API_URL_OVERFIT = `${BASE_URL}/predictOverfit`;
 
 export const mlService = {
 
